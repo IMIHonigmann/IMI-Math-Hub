@@ -1,6 +1,6 @@
+@tailwind utilities;
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,12 +18,56 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(11, 15, 24);
+}
+
+.changeLang {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+  border-radius: 2px;
+  background-color: rgb(209, 209, 209);
+  color: rgb(11, 15, 24);
+  border-width: 0.75px
+}
+
+span.changeLang.on {
+  position: absolute;
+  transform: translateX(-2px);
+  background-color: rgb(209, 209, 209);
+  color: rgb(11, 15, 24);
+  border-color: rgb(163, 163, 163);
+  transition: 0.25s;
+}
+
+span.changeLang.off {
+  position: absolute;
+  transform: translateX(-20px);
+  background-color: rgb(11, 15, 24);
+  color: rgb(209, 209, 209);
+  border-color: rgb(163, 163, 163);
+  transition: 0.25s;
+}
+
+.lang {
+  border-style: groove;
+  border-width: 2px;
+  border-radius: 5px;
+  padding-inline: 20px;
+  cursor: pointer;
+}
+
+span.lang.on {
+  border-color: aliceblue;
+  background: linear-gradient(to right, rgb(0, 87, 0), rgb(150, 0, 0));
+  transition: 0.3s;
+}
+
+span.lang.off {
+  border-color: rgb(12, 12, 12);
+  background: linear-gradient(to right, rgb(0, 87, 0), rgb(150, 0, 0));
+  transition: 0.3s;
 }
 
 @layer utilities {
