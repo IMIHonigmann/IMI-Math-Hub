@@ -38,23 +38,42 @@ function Home() {
       <h3>Volume</h3>
       <BlockMath math={formulas.volume} />
 
-      <h1 class="text-5xl my-5"> Gaussian Elimination </h1>
-      <p>Not always possible but what we want to see is this:</p>
-      <InlineMath math={formulas.gauss} />
-      {'=>'}
-      <InlineMath math={formulas.gaussS1} />
-      {'=>'}
-      <InlineMath math={formulas.gaussS2} />
-      {'=>'}
-      <InlineMath math={formulas.gaussS3} />
-      {'=>'}
-      <InlineMath math={formulas.gaussFinal} />
+      <div class='mx-5'>
+        <h1 class="text-5xl my-5"> Gaussian Elimination </h1>
+        <p> Our Goal: Subtract the Rows with eachother (allowed in algebra btw) until you get a form that resembles stairs ascending to the left</p>
+        <InlineMath math={`a_{21}, a_{31}, a_{32}`} /> <span> should all equal 0 in the end</span>
+        <br/>
+        <br/>
+        <p>Note: This is not always possible but what we want to see is this:</p>
+        <br/>
+        <InlineMath math={formulas.gauss} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={formulas.gaussS1} />
+        <InlineMath math={`III' = III - (I/a_{11} * a_{31})`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={formulas.gaussS2} />
+        <InlineMath math={`II' = II - (I/a_{11} * a_{21})`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={formulas.gaussS3} />
+        <InlineMath math={`III'' = III' - (II/a_{21} * a_{31})`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={formulas.gaussFinal} />
+        <br/>
+        <br/>
+        <p>{`Don't panic! It's very computationally intensive but not that complicated when you break it down. Just do it a few times and you'll get the hang of it`}</p>
+      </div>
 
-      <h1 class="text-5xl my-5 mt-10"> Gaussian Jordan Elimination </h1>
+      <h1 class="text-5xl my-5 mt-10"> Gauss-Jordan Elimination </h1>
       <BlockMath math={formulas.gaussJordan} />
       <BlockMath math={formulas.gaussJordanS1} />
-
-      <h1>Triangle Test</h1>
     </div>
   );
 }
