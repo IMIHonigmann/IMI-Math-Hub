@@ -22,8 +22,15 @@ const GeoGebra = () => {
         width: 800,
         height: 600,
         showToolBar: false,
-        showAlgebraInput: false,
+        showAlgebraInput: true,
+        showAlgebraView: true,
         showMenuBar: false,
+        borderColor: "none",
+        borderRadius: 30,
+        autoHeight: true,
+        enableCAS: false,
+        editorBackgroundColor: 'green',
+        transparentGraphics: true,
       };
 
       const ggbApp = new window.GGBApplet(parameters, true);
@@ -42,15 +49,18 @@ const GeoGebra = () => {
         // // Create a point not on the plane
         // api.evalCommand('D = (3, 3, 5)');
 
+
         api.evalCommand('a = (1, 2, 3)');
         api.evalCommand('b = (0, 3, 4)');
         api.evalCommand('λ = Dot(a,b) / |b|^2');
         api.evalCommand('v = λ*b');
+        api.evalCommand('l = a-v');
         api.evalCommand('V = v');
         api.evalCommand('A = a');
-        api.evalCommand('l = a-v');
 
         api.evalCommand('lot = Translate(l, V)');
+        api.evalCommand("SetColor(a, 1, 1, 1)");
+        api.evalCommand("SetColor(b, 1, 1, 1)");
         api.evalCommand("SetColor(lot, 1, 0, 0)");
         api.evalCommand("SetColor(v, 0, 1, 0)");
         api.setVisible('l', false);

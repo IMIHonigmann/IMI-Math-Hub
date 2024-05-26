@@ -18,6 +18,7 @@ function Home() {
 
   return (
     <div>
+      <title> IMI-MathHub</title>
       <span onClick={handleLanguageChange} className={'lang ' + (language ? 'off' : 'on')}>
         <span className={'changeLang ' + (language ? 'off' : 'on')}>||||</span>
       </span>
@@ -51,13 +52,14 @@ function Home() {
 
       <h1 class="text-5xl my-5 mt-10"> Gaussian Jordan Elimination </h1>
       <BlockMath math={formulas.gaussJordan} />
+      <BlockMath math={formulas.gaussJordanS1} />
 
       <h1>Triangle Test</h1>
     </div>
   );
 }
 
-function GeoGebraTest() {
+function GeoGebraTest(applId) {
 
   return (
     <div>
@@ -66,7 +68,7 @@ function GeoGebraTest() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.geogebra.org/apps/deployggb.js" async ></script>
       </Head>
-      <h1>GeoGebra 3D Applet Example</h1>
+      <h1></h1>
       <GeoGebra />
     </div>
   );
@@ -82,7 +84,7 @@ function GeoFicker() {
         <script src="https://cdn.geogebra.org/apps/deployggb.js" async ></script>
       </Head>
       <h1>Watch dat souija boy</h1>
-      <GeoGebra class="cursor-pointer" />
+      <GeoGebra appletId='applet2' />
     </div>
   );
 }

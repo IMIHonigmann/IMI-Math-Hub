@@ -22,7 +22,7 @@ const formulas = {
     \\begin{bmatrix}
     \\textcolor{#9b8cfa}{a_{11}} & \\textcolor{#9b8cfa}{a_{12}} & \\textcolor{#9b8cfa}{a_{13}} \\\\
     \\textcolor{#FF7F50}{a_{21}} & \\textcolor{#FF7F50}{a_{22}} & \\textcolor{#FF7F50}{a_{23}} \\\\
-    \\textcolor{#9ACD32}{a_{31}}-\\textcolor{#FF7F50}{a_{11}} & \\textcolor{#9ACD32}{a_{32}}-\\textcolor{#FF7F50}{a_{12}} & \\textcolor{#9ACD32}{a_{33}}-\\textcolor{#FF7F50}{a_{13}}
+    \\textcolor{#9ACD32}{a_{31}}-\\textcolor{#9b8cfa}{a_{11}} & \\textcolor{#9ACD32}{a_{32}}-\\textcolor{#9b8cfa}{a_{12}} & \\textcolor{#9ACD32}{a_{33}}-\\textcolor{#9b8cfa}{a_{13}}
     \\end{bmatrix}
     `,
     gaussS2: `
@@ -35,7 +35,7 @@ const formulas = {
     gaussS3: `
     \\begin{bmatrix}
     \\textcolor{#9b8cfa}{a_{11}} & \\textcolor{#9b8cfa}{a_{12}} & \\textcolor{#9b8cfa}{a_{13}} \\\\
-    \\colorbox{blue}{0} & \\textcolor{#FF7F50}{a_{22}} & \\textcolor{#FF7F50}{a_{23}} \\\\
+    \\colorbox{blue}{\\textcolor{#FF7F50}{0}} & \\textcolor{#FF7F50}{a_{22}} & \\textcolor{#FF7F50}{a_{23}} \\\\
     \\colorbox{blue}{\\textcolor{#9ACD32}{0}-\\textcolor{#FF7F50}{0}} & \\textcolor{#9ACD32}{a_{32}}-\\textcolor{#FF7F50}{a_{22}} & \\textcolor{#9ACD32}{a_{33}}-\\textcolor{#FF7F50}{a_{23}}
     \\end{bmatrix}
     `,
@@ -52,6 +52,14 @@ const formulas = {
     b_{21} & b_{22} & b_{23} & b_{24} \\\\
     b_{31} & b_{32} & b_{33} & b_{34} \\\\
     b_{41} & b_{42} & b_{43} & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanS1: `
+    \\begin{bmatrix}
+    b_{11} & b_{12} & b_{13} & b_{14} \\\\
+    b_{21} & b_{22} & b_{23} & b_{24} \\\\
+    b_{31} & b_{32} & b_{33} & b_{34} \\\\
+    b_{41}-b_{11} & b_{42}-b_{12} & b_{43}=b_{13} & b_{44}-b_{14}
     \\end{bmatrix}
   `,
   }
