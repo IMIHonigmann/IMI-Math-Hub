@@ -73,7 +73,6 @@ function Home() {
 
       <h1 class="text-5xl my-5 mt-10"> Gauss-Jordan Elimination </h1>
       <BlockMath math={formulas.gaussJordan} />
-      <BlockMath math={formulas.gaussJordanS1} />
     </div>
   );
 }
