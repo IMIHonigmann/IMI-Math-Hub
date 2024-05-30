@@ -5,7 +5,7 @@ import 'katex/dist/katex.min.css';
 import Head from 'next/head';
 import GeoGebra from './components/GeoGebra';
 import formulas from './formulas';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function Home() {
@@ -15,6 +15,10 @@ function Home() {
   const handleLanguageChange = () => {
     setLanguage(prev => !prev);
   };
+
+  // FIX for GH-Pages: When changing the language to german and back everything displays correctly
+
+  useEffect(() => setLanguage(true), []);
 
   return (
     <div>
@@ -105,6 +109,14 @@ function GeoFicker() {
       <GeoGebra appletId='applet2' />
     </div>
   );
+}
+
+const HomeLoader = () => {
+  useEffect(() => {
+    window.onload = () => <Home/>
+  }, []);
+
+  return <>Loading...</>
 }
 
 export default Home;

@@ -30,7 +30,7 @@ const GeoGebra = () => {
         autoHeight: true,
         enableCAS: false,
         editorBackgroundColor: 'green',
-        transparentGraphics: true,
+        transparentGraphics: false,
       };
 
       const ggbApp = new window.GGBApplet(parameters, true);
