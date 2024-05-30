@@ -5,6 +5,7 @@ import 'katex/dist/katex.min.css';
 import Head from 'next/head';
 import GeoGebra from './components/GeoGebra';
 import formulas from './formulas';
+import gaussExample from './gaussExample';
 import { useEffect, useState } from 'react';
 
 
@@ -16,8 +17,7 @@ function Home() {
     setLanguage(prev => !prev);
   };
 
-  // FIX for GH-Pages: When changing the language to german and back everything displays correctly
-
+  // Ensures GH-Pages display works correctly
   useEffect(() => setLanguage(true), []);
 
   return (
@@ -65,7 +65,7 @@ function Home() {
         <br/>
         {'=>'}
         <InlineMath math={formulas.gaussS3} />
-        <InlineMath math={`III'' = III' - (II/a_{21} * a_{31})`} />
+        <InlineMath math={`III'' = III' - (II'/a_{22} * a_{32})`} />
         <br/>
         <br/>
         {'=>'}
@@ -73,10 +73,77 @@ function Home() {
         <br/>
         <br/>
         <p>{`Don't panic! It's very computationally intensive but not that complicated when you break it down. Just do it a few times and you'll get the hang of it`}</p>
+
+        <br/>
+        <br/>
+        <p>Lets do an example:</p>
+        <br/>
+        <InlineMath math={gaussExample.gaussInitial} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={gaussExample.gaussS1} />
+        <InlineMath math={`III' = III - (I/1 * 7)`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={gaussExample.gaussS2} />
+        <InlineMath math={`II' = II - (I/1 * 4)`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={gaussExample.gaussS3} />
+        <InlineMath math={`III'' = III' - (II'/5 * (-6))`} />
+        <br/>
+        <br/>
+        {'=>'}
+        <InlineMath math={gaussExample.gaussFinal} />
+        <br/>
+        <br/>
+        <h3 class="text-3xl">{`Common use cases:`}</h3>
+        <ul>
+          <li>Solving a system of equations with
+            <ul class="mx-5">
+                <li>One Solution</li>
+                <li>No Solution</li>
+                <li>Set of Solutions</li>
+            </ul>
+          </li>
+          <li>Finding 3 unknowns (usually x, y and z)</li>
+          <li>Determining the rank/dimension of a matrix</li>
+          <li>Checking if the matrix contains linearly dependent vectors</li>
+        </ul>
       </div>
 
       <h1 class="text-5xl my-5 mt-10"> Gauss-Jordan Elimination </h1>
-      <BlockMath math={formulas.gaussJordan} />
+      <InlineMath math={formulas.gaussJordanS1} />
+      <br/>
+      <br/>
+      <InlineMath math={`II' = II - (I/b_{11} * 4)`} />
+      <br/>
+      <InlineMath math={`III' = III - (I/b_{11} * 4)`} />
+      <br/>
+      <InlineMath math={`IV' = IV - (I/b_{11} * 4)`} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanS2} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanS3} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanS4} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanS5} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanS6} />
+      <br/>
+      <br/>
+      <InlineMath math={formulas.gaussJordanFinal} />
+      {`<=>`}
+      <InlineMath math={formulas.unitMatrix} />
     </div>
   );
 }

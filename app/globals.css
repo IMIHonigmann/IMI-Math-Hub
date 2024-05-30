@@ -28,8 +28,18 @@ p {
   background-color: rgb(26, 22, 23);
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   font-family: 'Bahnschrift', sans-serif;
+}
+
+ul {
+  list-style-type: decimal;
+  font-family: Arial, sans-serif; /* Font for the list items */
+  font-size: 18px; /* Font size of the list items */
+  margin-left: 40px;
+}
+ul li {
+  margin-bottom: 10px; /* Space between list items */
 }
 
 .changeLang {

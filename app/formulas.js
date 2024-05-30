@@ -47,7 +47,7 @@ const formulas = {
     \\begin{bmatrix}
       ${unchangedGaussRows[0]}
       \\colorbox{blue}{\\textcolor{${colors[1]}}{0}} & \\textcolor{${colors[1]}}{a_{22}} & \\textcolor{${colors[1]}}{a_{23}} \\\\
-      \\colorbox{blue}{\\textcolor{${colors[2]}}{0}-\\textcolor{${colors[1]}}{0}} & \\textcolor{${colors[2]}}{a_{32}}-(${gEl.a_22}/${gEl.a_21}*${gEl.a_31}) & \\textcolor{${colors[2]}}{a_{33}}-(${gEl.a_23}/${gEl.a_21}*${gEl.a_31})
+      \\colorbox{blue}{\\textcolor{${colors[2]}}{0}-\\textcolor{${colors[1]}}{0}} & \\textcolor{${colors[2]}}{a_{32}}-(${gEl.a_22}/${gEl.a_22}*${gEl.a_32}) & \\textcolor{${colors[2]}}{a_{33}}-(${gEl.a_23}/${gEl.a_22}*${gEl.a_32})
     \\end{bmatrix}
   `,
   gaussFinal: `
@@ -103,11 +103,68 @@ const formulas = {
   gaussJordanS1: `
     \\begin{bmatrix}
       b_{11} & b_{12} & b_{13} & b_{14} \\\\
-      b_{21} & b_{22} & b_{23} & b_{24} \\\\
-      b_{31} & b_{32} & b_{33} & b_{34} \\\\
-      b_{41}-b_{11} & b_{42}-b_{12} & b_{43}=b_{13} & b_{44}-b_{14}
+      b_{21}-(b_{11}/b_{11}*b_{21}) & b_{22} & b_{23} & b_{24} \\\\
+      b_{31}-(b_{11}/b_{11}*b_{31}) & b_{32} & b_{33} & b_{34} \\\\
+      b_{41}-(b_{11}/b_{11}*b_{41}) & b_{42} & b_{43} & b_{44}
     \\end{bmatrix}
-  `
+  `,
+  gaussJordanS2: `
+    \\begin{bmatrix}
+      b_{11} & b_{12} & b_{13} & b_{14} \\\\
+      0 & b_{22} & b_{23} & b_{24} \\\\
+      0 & b_{32}-(b_{22}/b_{22}*b_{32}) & b_{33} & b_{34} \\\\
+      0 & b_{42}-(b_{22}/b_{22}*b_{42}) & b_{43} & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanS3: `
+    \\begin{bmatrix}
+      b_{11} & b_{12} & b_{13} & b_{14} \\\\
+      0 & b_{22} & b_{23} & b_{24} \\\\
+      0 & 0 & b_{33} & b_{34} \\\\
+      0 & 0 & b_{43}-(b_{33}/b_{33}*b_{43}) & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanS4: `
+    \\begin{bmatrix}
+      b_{11} & b_{12} & b_{13} & b_{14}-(b_{44}/b_{44}*b_{14}) \\\\
+      0 & b_{22} & b_{23} & b_{24}-(b_{44}/b_{44}*b_{24}) \\\\
+      0 & 0 & b_{33} & b_{34}-(b_{44}/b_{44}*b_{34}) \\\\
+      0 & 0 & 0 & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanS5: `
+    \\begin{bmatrix}
+      b_{11} & b_{12} & b_{13}-(b_{33}/b_{33}*b_{13}) & 0 \\\\
+      0 & b_{22} & b_{23}-(b_{33}/b_{33}*b_{23}) & 0 \\\\
+      0 & 0 & b_{33} & 0 \\\\
+      0 & 0 & 0 & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanS6: `
+    \\begin{bmatrix}
+      b_{11} & b_{12}-(b_{22}/b_{22}*b_{12}) & 0 & 0 \\\\
+      0 & b_{22} & 0 & 0 \\\\
+      0 & 0 & b_{33} & 0 \\\\
+      0 & 0 & 0 & b_{44}
+    \\end{bmatrix}
+  `,
+  gaussJordanFinal: `
+    \\begin{bmatrix}
+      b_{11} & 0 & 0 & 0 \\\\
+      0 & b_{22} & 0 & 0 \\\\
+      0 & 0 & b_{33} & 0 \\\\
+      0 & 0 & 0 & b_{44}
+    \\end{bmatrix}
+  `,
+  unitMatrix: `
+    \\begin{bmatrix}
+      1 & 0 & 0 & 0 \\\\
+      0 & 1 & 0 & 0 \\\\
+      0 & 0 & 1 & 0 \\\\
+      0 & 0 & 0 & 1
+    \\end{bmatrix}
+  `,
+
 };
 
 export default formulas;
