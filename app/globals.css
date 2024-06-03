@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   font-family: 'Bahnschrift', sans-serif;
@@ -26,6 +30,7 @@ p {
   color: rgb(var(--foreground-rgb));
   font-family: 'Bahnschrift', sans-serif;
   background-color: rgb(26, 22, 23);
+  margin: 20px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -42,20 +47,38 @@ ul li {
   margin-bottom: 10px; /* Space between list items */
 }
 
+a {
+  color: cyan;
+}
+
+a:hover {
+  text-decoration: underline;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  0% { color: cyan; scale: 2; }
+  20% { color: rgba(0, 128, 0, 0) }
+  100% { color: cyan }
+}
+
 .changeLang {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none;    /* Firefox */
   -ms-user-select: none;     /* Internet Explorer/Edge */
   user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
-  border-radius: 2px;
+  border-radius: 4px;
+  font-size: 0.8rem;
   background-color: rgb(209, 209, 209);
+  transform: translateY(-2px);
   color: rgb(11, 15, 24);
   border-width: 0.75px
 }
 
 span.changeLang.on {
   position: absolute;
-  transform: translateX(-2px);
+  transform: translateX(2px) translateY(1.6px);
   background-color: rgb(209, 209, 209);
   color: rgb(11, 15, 24);
   border-color: rgb(163, 163, 163);
@@ -64,7 +87,7 @@ span.changeLang.on {
 
 span.changeLang.off {
   position: absolute;
-  transform: translateX(-20px);
+  transform: translateX(-20px) translateY(1.6px);
   background-color: rgb(11, 15, 24);
   color: rgb(209, 209, 209);
   border-color: rgb(163, 163, 163);
